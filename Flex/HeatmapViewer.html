@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Heatmap по квадратам</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map { height: 90vh; width: 100%; }
+    #csvFile { margin: 10px; }
+  </style>
+</head>
+<body>
+<input type="file" id="csvFile" accept=".csv" />
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<script>
+const map = L.map("map").setView([51.0, 71.42], 12);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap contributors"
+}).addTo(map);
+
+const N = 0.001; // размер квадрата
+
+document.getElementById("csvFile").addEventListener("change", function(e) {
+  const file = e.target.files[0];
+  Papa.parse(file, {
+    header: true,
+    dynamicTyping: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+      const data = results.data;
+
+      const maxFreq = Math.max(...data.map(r => parseFloat(r.frequency) || 1));
+      const heatData = [];
+
+      for (let row of data) {
+        const cellX = parseInt(row.cell_x);
+        const cellY = parseInt(row.cell_y);
+        const freq = parseFloat(row.frequency) || 1;
+
+        if (!isNaN(cellX) && !isNaN(cellY)) {
+          const lat = (cellY + 0.5) * N;
+          const lng = (cellX + 0.5) * N;
+          const intensity = freq / maxFreq; 
+          heatData.push([lat, lng, intensity]);
+
+          // Круг с обработчиком клика
+          const circle = L.circle([lat, lng], {
+            color: 'red',
+            fillColor: 'orange',
+            fillOpacity: 0.5,
+            radius: 50 + intensity * 100
+          }).addTo(map);
+
+          circle.bindPopup(
+            `Квадрат: (${cellX}, ${cellY})<br>Частота: ${freq}`
+          );
+
+          // Показываем popup при клике
+          circle.on('click', function() {
+            circle.openPopup();
+          });
+        }
+      }
+
+      // Центрирование карты
+      if (heatData.length > 0) {
+        const lats = heatData.map(d => d[0]);
+        const lngs = heatData.map(d => d[1]);
+        const centerLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+        const centerLng = (Math.min(...lngs) + Math.max(...lngs)) / 2;
+        map.setView([centerLat, centerLng], 13);
+      }
+
+      // Heatmap с градиентом
+      L.heatLayer(heatData, {
+        radius: 25,
+        blur: 15,
+        maxZoom: 17,
+        gradient: {0.0: 'blue', 0.5: 'lime', 0.7: 'yellow', 1.0: 'red'}
+      }).addTo(map);
+    },
+    error: function(err) {
+      alert("Ошибка загрузки CSV: " + err);
+    }
+  });
+});
+</script>
+</body>
+</html>

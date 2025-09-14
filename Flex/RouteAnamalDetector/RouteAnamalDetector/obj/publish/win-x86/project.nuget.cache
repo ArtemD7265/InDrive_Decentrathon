@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "pGoz2R/Cm/k=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\RouteAnamalDetector.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ArtemD\\.nuget\\packages\\costura.fody\\6.0.0\\costura.fody.6.0.0.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\fody\\6.8.2\\fody.6.8.2.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.8\\microsoft.netcore.app.runtime.win-x86.8.0.8.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.8\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.8.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.8\\microsoft.aspnetcore.app.runtime.win-x86.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

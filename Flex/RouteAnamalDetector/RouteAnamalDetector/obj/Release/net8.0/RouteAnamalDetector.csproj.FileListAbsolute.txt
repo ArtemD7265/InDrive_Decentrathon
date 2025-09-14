@@ -1,0 +1,17 @@
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\RouteAnamalDetector.exe
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\RouteAnamalDetector.deps.json
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\RouteAnamalDetector.runtimeconfig.json
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\RouteAnamalDetector.dll
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\RouteAnamalDetector.pdb
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.AssemblyInfoInputs.cache
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.AssemblyInfo.cs
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.csproj.CoreCompileInputs.cache
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.sourcelink.json
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.csproj.Fody.CopyLocal.cache
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.dll
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\refint\RouteAnamalDetector.dll
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.pdb
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\RouteAnamalDetector.genruntimeconfig.cache
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Release\net8.0\ref\RouteAnamalDetector.dll

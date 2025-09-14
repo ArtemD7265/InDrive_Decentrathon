@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF359D5-D7A3-414D-BAD8-8ADAF17011C3}|RouteAnamalDetector\\RouteAnamalDetector.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\routeanamaldetector\\routeanamaldetector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAF359D5-D7A3-414D-BAD8-8ADAF17011C3}|RouteAnamalDetector\\RouteAnamalDetector.csproj|solutionrelative:routeanamaldetector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF359D5-D7A3-414D-BAD8-8ADAF17011C3}|RouteAnamalDetector\\RouteAnamalDetector.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\routeanamaldetector\\routeanamaldetector\\routeanamaldetector.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DAF359D5-D7A3-414D-BAD8-8ADAF17011C3}|RouteAnamalDetector\\RouteAnamalDetector.csproj|solutionrelative:routeanamaldetector\\routeanamaldetector.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RouteAnamalDetector",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\RouteAnamalDetector.csproj",
+              "RelativeDocumentMoniker": "RouteAnamalDetector\\RouteAnamalDetector.csproj",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\RouteAnamalDetector.csproj",
+              "RelativeToolTip": "RouteAnamalDetector\\RouteAnamalDetector.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-14T15:59:15.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\Program.cs",
+              "RelativeDocumentMoniker": "RouteAnamalDetector\\Program.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\Program.cs",
+              "RelativeToolTip": "RouteAnamalDetector\\Program.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAADgv14AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T12:06:33.171Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

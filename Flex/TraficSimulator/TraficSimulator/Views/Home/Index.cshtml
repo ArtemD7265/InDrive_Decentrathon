@@ -1,0 +1,399 @@
+﻿@{
+    ViewData["Title"] = "Потоковая симуляция трафика";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .settings-toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            background: #111;
+            color: #fff;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .settings-panel {
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            z-index: 1000;
+            width: 320px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+            .settings-panel.open {
+                display: block;
+            }
+
+        .settings-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            background: #111;
+            color: #fff;
+            border: none;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .side-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .obstacle-palette, .logs {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            width: 320px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 999px;
+            cursor: grab;
+        }
+
+        .dtp {
+            background: #e63946;
+        }
+
+        .remont {
+            background: #ff9f1c;
+        }
+
+        .car-label {
+            background: #111;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 11px;
+            border: 1px solid #000;
+        }
+
+        .status-bar {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            z-index: 1000;
+            background: #fff;
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+
+        .drop-hint {
+            position: absolute;
+            right: 340px;
+            top: 10px;
+            z-index: 999;
+            background: rgba(17,17,17,0.7);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        #map.drag-over {
+            outline: 3px dashed #96b3ff;
+            outline-offset: -3px;
+        }
+
+        .logs pre {
+            margin: 0;
+            font-size: 11px;
+            line-height: 1.35;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <div class="settings-toggle" id="settingsToggle" title="Настройки">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15.4a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06A2 2 0 1 1 7.04 4.3"></path>
+        </svg>
+    </div>
+
+    <div class="settings-panel" id="settingsPanel">
+        <h3>Настройки симуляции</h3>
+        <div class="settings-row">
+            <label>Город</label>
+            <select id="citySelect">
+                <option value="kostanay" selected>Костанай</option>
+                <option value="astana">Астана</option>
+                <option value="almaty">Алматы</option>
+                <option value="moscow">Москва</option>
+                <option value="berlin">Берлин</option>
+            </select>
+        </div>
+        <div class="settings-row">
+            <label>Размер квадрата (км)</label>
+            <input id="rectSizeKm" type="number" min="1" max="50" step="1" value="3" />
+        </div>
+        <div class="settings-row">
+            <label>Одновременно машин</label>
+            <input id="maxCars" type="number" min="1" max="200" step="1" value="100" />
+        </div>
+        <div class="settings-row">
+            <label>Спавн каждые (с)</label>
+            <input id="spawnEach" type="number" min="1" max="20" step="1" value="1" />
+        </div>
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+            <button class="btn" id="applyBtn">Применить</button>
+        </div>
+        <div style="font-size:12px; color:#666; margin-top:6px;">Подсказка: прямоугольник региона можно перемещать/масштабировать (инструменты слева).</div>
+    </div>
+
+    <div class="side-panel">
+        <div class="obstacle-palette">
+            <h3>Препятствия</h3>
+            <div style="font-size: 12px; color: #333; margin-bottom: 8px;">Перетащите на карту. Клик по препятствию — удалить.</div>
+            <div class="badge-row">
+                <div class="badge dtp" draggable="true" data-type="ДТП">🚧 ДТП</div>
+                <div class="badge remont" draggable="true" data-type="Ремонт">🛠 Ремонт</div>
+            </div>
+        </div>
+        <div class="logs">
+            <h3>Потоковый лог (1 Гц)</h3>
+            <pre id="logView">randomized_id,lat,lng,alt,spd,azm</pre>
+        </div>
+    </div>
+
+    <div class="drop-hint" id="dropHint">Отпустите для установки препятствия</div>
+    <div class="status-bar" id="statusBar">🟢 Инициализация…</div>
+
+    <script>
+        // Карта
+        const map = L.map('map', { worldCopyJump: true }).setView([53.219, 63.635], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+        // Рисование региона
+        const drawnItems = new L.FeatureGroup().addTo(map);
+        map.addControl(new L.Control.Draw({
+            position: 'topleft',
+            draw: {
+                polyline: false, polygon: false, circle: false, marker: false, circlemarker: false,
+                rectangle: { shapeOptions: { color: '#3b82f6', weight: 2, fillOpacity: 0.05 } }
+            },
+            edit: { featureGroup: drawnItems, edit: true, remove: false }
+        }));
+
+        // Квадрат региона 10x10 км около Костаная
+        let regionRect = null;
+        function kmToDegLat(km) { return km / 110.57; }
+        function kmToDegLng(km, lat) { return km / (111.32 * Math.cos(lat * Math.PI / 180)); }
+        function setRegionAround(center, sizeKm) {
+            const half = sizeKm / 2, dLat = kmToDegLat(half), dLng = kmToDegLng(half, center[0]);
+            const sw = [center[0] - dLat, center[1] - dLng], ne = [center[0] + dLat, center[1] + dLng];
+            const b = L.latLngBounds(sw, ne);
+            if (!regionRect) { regionRect = L.rectangle(b, { color: '#3b82f6', weight: 2, fillOpacity: 0.05 }); drawnItems.addLayer(regionRect); map.fitBounds(b, { padding: [30, 30] }); }
+            else { regionRect.setBounds(b); map.fitBounds(b, { padding: [30, 30] }); }
+            notifyRegion();
+        }
+        setRegionAround([53.219, 63.635], 3);
+
+        // SignalR
+        const connection = new signalR.HubConnectionBuilder().withUrl("/trafficHub").build();
+
+        // UI: настройки
+        const settingsToggle = document.getElementById('settingsToggle');
+        const settingsPanel = document.getElementById('settingsPanel');
+        settingsToggle.addEventListener('click', () => settingsPanel.classList.toggle('open'));
+
+        const citySelect = document.getElementById('citySelect');
+        const rectSizeKmInput = document.getElementById('rectSizeKm');
+        const maxCarsInput = document.getElementById('maxCars');
+        const spawnEachInput = document.getElementById('spawnEach');
+        const applyBtn = document.getElementById('applyBtn');
+
+        citySelect.addEventListener('change', async () => {
+            await connection.invoke("SetCity", citySelect.value);
+        });
+        applyBtn.addEventListener('click', async () => {
+            const rectSizeKm = parseInt(rectSizeKmInput.value || '3', 3);
+            const maxCars = parseInt(maxCarsInput.value || '100', 100);
+            const spawnEverySec = parseInt(spawnEachInput.value || '1', 10);
+            await connection.invoke("ApplySettings", rectSizeKm, maxCars, spawnEverySec, true);
+            // Перестроим квадрат вокруг текущего центра
+            const c = regionRect.getBounds().getCenter();
+            setRegionAround([c.lat, c.lng], rectSizeKm);
+        });
+
+        // При редактировании прямоугольника — отправим новые границы
+        map.on(L.Draw.Event.EDITSTOP, notifyRegion);
+        map.on(L.Draw.Event.CREATED, (e) => {
+            if (e.layerType === 'rectangle') {
+                if (regionRect) drawnItems.removeLayer(regionRect);
+                regionRect = e.layer;
+                drawnItems.addLayer(regionRect);
+                notifyRegion();
+            }
+        });
+        async function notifyRegion() {
+            if (!regionRect) return;
+            const b = regionRect.getBounds();
+            await connection.invoke("SetRegion", b.getSouth(), b.getWest(), b.getNorth(), b.getEast());
+        }
+
+        // Слои
+        const carsLayer = L.layerGroup().addTo(map);
+        const obstaclesLayer = L.layerGroup().addTo(map);
+        let carMarkers = new Map();
+
+        // Обновление машин
+        connection.on("UpdateCars", cars => {
+            // Обновляем/создаем
+            const keep = new Set(cars.map(c => c.id));
+            // remove missing
+            for (const [id, mk] of carMarkers) {
+                if (!keep.has(id)) { carsLayer.removeLayer(mk); carMarkers.delete(id); }
+            }
+            for (const c of cars) {
+                let mk = carMarkers.get(c.id);
+                const icon = L.divIcon({ className: 'car-icon', html: `<div class="car-label">${c.id.slice(-5)}</div>`, iconSize: [1, 1] });
+                if (!mk) {
+                    mk = L.marker([c.lat, c.lng], { icon }).addTo(carsLayer);
+                    mk.on('click', () => connection.invoke("RequestRouteForCar", c.id));
+                    carMarkers.set(c.id, mk);
+                } else {
+                    mk.setLatLng([c.lat, c.lng]);
+                }
+            }
+        });
+
+        // Маршрут при клике на машину
+        let selectedRoute = null;
+        connection.on("RouteResult", r => {
+            if (selectedRoute) { map.removeLayer(selectedRoute); selectedRoute = null; }
+            const latlngs = r.coordinates.map(c => [c.lat, c.lng]);
+            selectedRoute = L.polyline(latlngs, { color: '#3b82f6', weight: 4, opacity: 0.7 }).addTo(map);
+        });
+        map.on('click', () => { if (selectedRoute) { map.removeLayer(selectedRoute); selectedRoute = null; } });
+
+        // Препятствия
+        connection.on("ObstaclesReset", () => { obstaclesLayer.clearLayers(); });
+        connection.on("ObstacleAdded", obs => {
+            const circle = L.circle([obs.lat, obs.lng], {
+                radius: obs.radius,
+                color: obs.type === "ДТП" ? "#e63946" : "#ff9f1c",
+                fillColor: obs.type === "ДТП" ? "#e63946" : "#ff9f1c",
+                fillOpacity: 0.35, weight: 2
+            }).addTo(obstaclesLayer);
+            circle.on('click', () => connection.invoke("RemoveObstacle", obs.id));
+            circle._obsId = obs.id;
+        });
+        connection.on("ObstacleRemoved", id => {
+            obstaclesLayer.eachLayer(l => { if (l._obsId === id) { obstaclesLayer.removeLayer(l); } });
+        });
+
+        // Drag&Drop препятствий
+        const dropHint = document.getElementById('dropHint');
+        const mapEl = document.getElementById('map');
+        let dragType = null;
+        document.querySelectorAll('.badge').forEach(b => {
+            b.addEventListener('dragstart', (ev) => {
+                dragType = ev.target.getAttribute('data-type');
+                ev.dataTransfer.setData('text/plain', dragType);
+                ev.dataTransfer.effectAllowed = 'copy';
+                dropHint.style.display = 'block';
+            });
+            b.addEventListener('dragend', () => {
+                dragType = null; dropHint.style.display = 'none'; mapEl.classList.remove('drag-over');
+            });
+        });
+        mapEl.addEventListener('dragover', ev => {
+            if (!dragType) return; ev.preventDefault(); ev.dataTransfer.dropEffect = 'copy'; mapEl.classList.add('drag-over'); dropHint.style.display = 'block';
+        });
+        mapEl.addEventListener('dragleave', () => { mapEl.classList.remove('drag-over'); dropHint.style.display = 'none'; });
+        mapEl.addEventListener('drop', async ev => {
+            if (!dragType) return; ev.preventDefault();
+            mapEl.classList.remove('drag-over'); dropHint.style.display = 'none';
+            const rect = mapEl.getBoundingClientRect();
+            const x = ev.clientX - rect.left, y = ev.clientY - rect.top;
+            const latlng = map.layerPointToLatLng(map.containerPointToLayerPoint([x, y]));
+            await connection.invoke("AddObstacle", latlng.lat, latlng.lng, dragType);
+            dragType = null;
+        });
+
+        // Логи CSV 1 Гц
+        connection.on("LogLines", lines => {
+            const view = document.getElementById('logView');
+            view.textContent += '\n' + lines.join('\n');
+            if (view.textContent.length > 120000) view.textContent = view.textContent.slice(-80000);
+            // Также в консоль
+            lines.forEach(l => console.log(l));
+        });
+
+        // Статус
+        connection.on("Status", s => {
+            document.getElementById('statusBar').textContent =
+                `🟢 Симуляция активна • Город: ${s.cityKey} • Квадрат: ${s.rectSizeKm}×${s.rectSizeKm} км • Машин: ${s.cars}`;
+            // Синхронизируем квадрат по серверу (на случай смены города)
+            // опционально — можно не делать fit, если не нужно прыгать картой
+        });
+
+        // Подключение
+        connection.start().then(() => {
+            console.log("SignalR connected");
+        }).catch(console.error);
+    </script>
+</body>
+</html>

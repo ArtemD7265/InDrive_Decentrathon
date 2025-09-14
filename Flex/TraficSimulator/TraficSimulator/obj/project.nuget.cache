@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "TFxTe1e/IFc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\TraficSimulator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ArtemD\\.nuget\\packages\\itinero\\1.5.1\\itinero.1.5.1.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\reminiscence\\1.3.0\\reminiscence.1.3.0.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\ArtemD\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}
