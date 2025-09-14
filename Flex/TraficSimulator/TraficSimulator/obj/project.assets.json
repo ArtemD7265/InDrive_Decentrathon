@@ -14,6 +14,77 @@
           "lib/netstandard2.0/Itinero.dll": {}
         }
       },
+      "Microsoft.NET.ILLink.Tasks/8.0.8": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Reminiscence/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.0",
+          "System.Memory": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Reminiscence.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Reminiscence.dll": {}
+        }
+      },
+      "System.Buffers/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Memory/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    "net8.0/win-x64": {
+      "Itinero/1.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Reminiscence": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Itinero.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Itinero.dll": {}
+        }
+      },
+      "Microsoft.NET.ILLink.Tasks/8.0.8": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
       "Reminiscence/1.3.0": {
         "type": "package",
         "dependencies": {
@@ -74,6 +145,57 @@
         "lib/net45/Itinero.dll",
         "lib/netstandard1.3/Itinero.dll",
         "lib/netstandard2.0/Itinero.dll"
+      ]
+    },
+    "Microsoft.NET.ILLink.Tasks/8.0.8": {
+      "sha512": "P8wR6MUWwYXIjPJuBaZgo5zlI/GWI6QEAo6NyVIbPefa9CCkohYu7dP2rD/mrqnjEqfRHyl+h9VZrDoGpELqYg==",
+      "type": "package",
+      "path": "microsoft.net.illink.tasks/8.0.8",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "Sdk/Sdk.props",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
+        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
+        "build/Microsoft.NET.ILLink.Analyzers.props",
+        "build/Microsoft.NET.ILLink.Tasks.props",
+        "build/Microsoft.NET.ILLink.targets",
+        "microsoft.net.illink.tasks.8.0.8.nupkg.sha512",
+        "microsoft.net.illink.tasks.nuspec",
+        "tools/net472/ILLink.Tasks.dll",
+        "tools/net472/ILLink.Tasks.dll.config",
+        "tools/net472/Mono.Cecil.Mdb.dll",
+        "tools/net472/Mono.Cecil.Pdb.dll",
+        "tools/net472/Mono.Cecil.Rocks.dll",
+        "tools/net472/Mono.Cecil.dll",
+        "tools/net472/Sdk/Sdk.props",
+        "tools/net472/System.Buffers.dll",
+        "tools/net472/System.Collections.Immutable.dll",
+        "tools/net472/System.Memory.dll",
+        "tools/net472/System.Numerics.Vectors.dll",
+        "tools/net472/System.Reflection.Metadata.dll",
+        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net472/build/Microsoft.NET.ILLink.targets",
+        "tools/net8.0/ILLink.Tasks.deps.json",
+        "tools/net8.0/ILLink.Tasks.dll",
+        "tools/net8.0/Mono.Cecil.Mdb.dll",
+        "tools/net8.0/Mono.Cecil.Pdb.dll",
+        "tools/net8.0/Mono.Cecil.Rocks.dll",
+        "tools/net8.0/Mono.Cecil.dll",
+        "tools/net8.0/Sdk/Sdk.props",
+        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
+        "tools/net8.0/illink.deps.json",
+        "tools/net8.0/illink.dll",
+        "tools/net8.0/illink.runtimeconfig.json",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Reminiscence/1.3.0": {
@@ -174,7 +296,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Itinero >= 1.5.1"
+      "Itinero >= 1.5.1",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.8"
     ]
   },
   "packageFolders": {
@@ -183,11 +306,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\TraficSimulator.csproj",
+      "projectUniqueName": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\TraficSimulator.csproj",
       "projectName": "TraficSimulator",
-      "projectPath": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\TraficSimulator.csproj",
+      "projectPath": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\TraficSimulator.csproj",
       "packagesPath": "C:\\Users\\ArtemD\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\obj\\",
+      "outputPath": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ArtemD\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -225,6 +348,12 @@
           "Itinero": {
             "target": "Package",
             "version": "[1.5.1, )"
+          },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.0.8, )",
+            "autoReferenced": true
           }
         },
         "imports": [
@@ -238,6 +367,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[8.0.8, 8.0.8]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[8.0.8, 8.0.8]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[8.0.8, 8.0.8]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -247,6 +390,11 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
       }
     }
   }

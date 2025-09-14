@@ -1,5 +1,6 @@
 using Itinero;
 using Microsoft.AspNetCore.SignalR;
+using System.Globalization;
 using System.Timers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +31,8 @@ app.MapControllerRoute(
 var sim = app.Services.GetRequiredService<TrafficSimulationService>();
 var hubCtx = app.Services.GetRequiredService<IHubContext<TrafficHub>>();
 var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-var logFilePath = Path.Combine(desktopPath, "traffic_log.csv");
+var basePath = AppDomain.CurrentDomain.BaseDirectory;
+var logFilePath = Path.Combine(basePath, "DataSet#new.csv");
 var timer = new System.Timers.Timer(1000); // 1 Ãö
 timer.Elapsed += async (_, __) =>
 {
@@ -48,7 +50,14 @@ timer.Elapsed += async (_, __) =>
     {
         var azm = sim.EstimateAzimuth(c);
         var alt = 250 + sim.Random.NextDouble() * 200;
-        return $"{c.Id},{c.Position.Lat:F6},{c.Position.Lng:F6},{alt:F6},{c.SpeedMps:F6},{azm:F6}";
+        return string.Join(",",
+            c.Id,
+            c.Position.Lat.ToString("F6", CultureInfo.InvariantCulture),
+            c.Position.Lng.ToString("F6", CultureInfo.InvariantCulture),
+            alt.ToString("F6", CultureInfo.InvariantCulture),
+            c.SpeedMps.ToString("F6", CultureInfo.InvariantCulture),
+            azm.ToString("F6", CultureInfo.InvariantCulture)
+        );
     }).ToList();
 
     await hubCtx.Clients.All.SendAsync("UpdateCars", cars);

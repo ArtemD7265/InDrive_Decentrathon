@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\",
+  "WorkspaceRootPath": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\desktop\\traficsimulator\\traficsimulator\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\desktop\\traficsimulator\\traficsimulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\traficsimulator\\traficsimulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\desktop\\traficsimulator\\traficsimulator\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\traficsimulator\\traficsimulator\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\traficsimulator\\traficsimulator\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\desktop\\traficsimulator\\traficsimulator\\traffichub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\traficsimulator\\traficsimulator\\traffichub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\traffichub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\desktop\\traficsimulator\\traficsimulator\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\traficsimulator\\traficsimulator\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\desktop\\traficsimulator\\traficsimulator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|c:\\users\\artemd\\documents\\github\\indrive_decentrathon\\flex\\traficsimulator\\traficsimulator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{54C77AEA-7951-4046-AAB6-79FBCD32BA0D}|TraficSimulator\\TraficSimulator.csproj|solutionrelative:traficsimulator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -34,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Program.cs",
               "RelativeDocumentMoniker": "TraficSimulator\\Program.cs",
-              "ToolTip": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Program.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Program.cs",
               "RelativeToolTip": "TraficSimulator\\Program.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAADwv0AAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAADwvyIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-14T03:20:17.769Z",
               "IsPinned": true,
@@ -54,9 +54,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "TraficSimulator\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "TraficSimulator\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAANkAAAAAAAAAAAAwwPoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -67,9 +67,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\HomeController.cs",
               "RelativeDocumentMoniker": "TraficSimulator\\HomeController.cs",
-              "ToolTip": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\HomeController.cs",
               "RelativeToolTip": "TraficSimulator\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -80,22 +80,22 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "TrafficHub.cs",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\TrafficHub.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\TrafficHub.cs",
               "RelativeDocumentMoniker": "TraficSimulator\\TrafficHub.cs",
-              "ToolTip": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\TrafficHub.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\TrafficHub.cs",
               "RelativeToolTip": "TraficSimulator\\TrafficHub.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAABBwBoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-14T07:23:47.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Services.cs",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Services.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Services.cs",
               "RelativeDocumentMoniker": "TraficSimulator\\Services.cs",
-              "ToolTip": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Services.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Services.cs",
               "RelativeToolTip": "TraficSimulator\\Services.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAAAJUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -106,9 +106,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Models.cs",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Models.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Models.cs",
               "RelativeDocumentMoniker": "TraficSimulator\\Models.cs",
-              "ToolTip": "C:\\Users\\ArtemD\\Desktop\\TraficSimulator\\TraficSimulator\\Models.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\TraficSimulator\\TraficSimulator\\Models.cs",
               "RelativeToolTip": "TraficSimulator\\Models.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

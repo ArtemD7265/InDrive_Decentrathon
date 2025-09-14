@@ -1,0 +1,5 @@
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\TraficSimulator\TraficSimulator\bin\Release\net8.0\win-x64\publish\appsettings.Development.json
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\TraficSimulator\TraficSimulator\bin\Release\net8.0\win-x64\publish\appsettings.json
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\TraficSimulator\TraficSimulator\bin\Release\net8.0\win-x64\publish\TraficSimulator.pdb
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\TraficSimulator\TraficSimulator\bin\Release\net8.0\win-x64\publish\aspnetcorev2_inprocess.dll
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\TraficSimulator\TraficSimulator\bin\Release\net8.0\win-x64\publish\TraficSimulator.exe
