@@ -30,5 +30,5 @@ C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\R
 C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Debug\net8.0\RouteAnamalDetector.pdb
 C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Debug\net8.0\RouteAnamalDetector.genruntimeconfig.cache
 C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Debug\net8.0\ref\RouteAnamalDetector.dll
-C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Debug\net8.0\Costura.dll
-C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Debug\net8.0\RouteAna.F731863E.Up2Date
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Debug\net8.0\RouteAnamalDetector.csproj.Fody.CopyLocal.cache
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\obj\Debug\net8.0\RouteAnamalDetector.csproj.Fody.RuntimeCopyLocal.cache

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouteAnamalDetector")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a2187c188feaac046bcd72af760ba8888db332d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0588d4a61f482abe1f375ef9b6dc9e915a706e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouteAnamalDetector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouteAnamalDetector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

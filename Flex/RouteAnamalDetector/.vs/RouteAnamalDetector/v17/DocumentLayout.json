@@ -18,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\Program.cs",
+              "RelativeDocumentMoniker": "RouteAnamalDetector\\Program.cs",
+              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\Program.cs",
+              "RelativeToolTip": "RouteAnamalDetector\\Program.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAowLQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T12:06:33.171Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -29,21 +42,7 @@
               "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\RouteAnamalDetector.csproj",
               "RelativeToolTip": "RouteAnamalDetector\\RouteAnamalDetector.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-14T15:59:15.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\Program.cs",
-              "RelativeDocumentMoniker": "RouteAnamalDetector\\Program.cs",
-              "ToolTip": "C:\\Users\\ArtemD\\Documents\\GitHub\\InDrive_Decentrathon\\Flex\\RouteAnamalDetector\\RouteAnamalDetector\\Program.cs",
-              "RelativeToolTip": "RouteAnamalDetector\\Program.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAADgv14AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T12:06:33.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T15:59:15.313Z"
             }
           ]
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -12,8 +13,15 @@ class Program
     {
         string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
+        string data1 = Path.Combine(basePath, "DataSet#1.csv");
+        string data2 = Path.Combine(basePath, "DataSet#2.csv");
         string file1 = Path.Combine(basePath, "Heatmap#1.csv");
         string file2 = Path.Combine(basePath, "Heatmap#2.csv");
+
+        // Генерим heatmap
+        HeatmapBuilder.BuildHeatmap(data1, file1);
+        HeatmapBuilder.BuildHeatmap(data2, file2);
+
         string outputFile = Path.Combine(basePath, "traffic_drop_filtered.csv");
 
         var dict1 = LoadCsv(file1);
@@ -145,4 +153,44 @@ class Program
 
         return components;
     }
+
+
+    class HeatmapBuilder
+    {
+        public static Dictionary<(int, int), int> BuildHeatmap(string inputFile, string outputFile, double N = 0.001)
+        {
+            var heatmap = new Dictionary<(int, int), int>();
+
+            // читаем CSV с колонками randomized_id,lat,lng,alt,spd,azm
+            foreach (var line in File.ReadLines(inputFile).Skip(1)) // skip header
+            {
+                if (string.IsNullOrWhiteSpace(line)) continue;
+                var parts = line.Split(',');
+                if (parts.Length < 3) continue;
+
+                // lat = 2-я колонка, lng = 3-я
+                double lat = double.Parse(parts[1], CultureInfo.InvariantCulture);
+                double lng = double.Parse(parts[2], CultureInfo.InvariantCulture);
+
+                int cellX = (int)Math.Floor(lng / N);
+                int cellY = (int)Math.Floor(lat / N);
+
+                var key = (cellX, cellY);
+                if (!heatmap.ContainsKey(key)) heatmap[key] = 0;
+                heatmap[key]++;
+            }
+
+            // сохраняем heatmap в CSV
+            using (var sw = new StreamWriter(outputFile))
+            {
+                sw.WriteLine("cell_x,cell_y,frequency");
+                foreach (var kv in heatmap)
+                    sw.WriteLine($"{kv.Key.Item1},{kv.Key.Item2},{kv.Value}");
+            }
+
+            Console.WriteLine($"Heatmap сохранён: {outputFile} (квадратов: {heatmap.Count})");
+            return heatmap;
+        }
+    }
+
 }
