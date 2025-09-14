@@ -1,0 +1,2 @@
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\win-x64\publish\RouteAnamalDetector.pdb
+C:\Users\ArtemD\Documents\GitHub\InDrive_Decentrathon\Flex\RouteAnamalDetector\RouteAnamalDetector\bin\Release\net8.0\win-x64\publish\RouteAnamalDetector.exe
